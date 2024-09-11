@@ -74,6 +74,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or support, please contact:
 
-- **Email**: muhammadadeeb65@gmail.com
+- **Email**: naved0955@gmail.com
 
 
