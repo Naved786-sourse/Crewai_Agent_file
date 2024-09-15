@@ -6,14 +6,14 @@ from crewai_tools import (
 )
 from dotenv import load_dotenv
 import os
+
 load_dotenv()
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-os.environ["OPENAI_MODEL_NAME"]="gpt-4-0125-preview"
+os.environ["OPENAI_MODEL_NAME"] = "gpt-4-0125-preview"
 
 search_tool = SerperDevTool()
 web_rag_tool = WebsiteSearchTool()
-
 
 researcher = Agent(
     role='Academic Content Researcher',
@@ -21,9 +21,10 @@ researcher = Agent(
     verbose=False,
     memory=True, 
     backstory=(
-        "A skilled researcher specializing in finding academic content for students."
+        "A skilled researcher specializing in finding academic content for students. "
+        "Uses modern tools to provide comprehensive results for a given query."
     ),
-    tools=[search_tool,web_rag_tool],
+    tools=[search_tool, web_rag_tool],
     allow_delegation=True
 )
 
@@ -33,8 +34,8 @@ writer = Agent(
     verbose=False,
     memory=True, 
     backstory=(
-        "A skilled writer who creates academic summaries and book recommendations."
+        "An expert writer skilled in creating academic summaries, blog posts, and book recommendations."
     ),
-    tools=[search_tool,web_rag_tool],
+    tools=[search_tool, web_rag_tool],
     allow_delegation=False
 )
